@@ -1,49 +1,33 @@
-import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useRoute } from '@react-navigation/native';
 import React from 'react';
+import { Card, Text } from 'react-native-paper';
 
-import { Text } from 'react-native';
-
+import { MineralInfoScreenRouteProp } from '../../../navigationTypes';
 import * as S from './styles';
+import { ScrollView } from 'react-native';
 
-  // Defina os tipos para os parâmetros das rotas
-  type RootStackParamList = {
-    MineralInfo: {
-      name: string;
-      description?: string;
-      image_url?: string;
-    };
-  };
-  
-  // Defina o tipo para a prop 'route'
-  type MineralInfoScreenRouteProp = RouteProp<RootStackParamList, 'MineralInfo'>;
-  
-  // Defina o tipo para a prop 'navigation'
-  type MineralInfoScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'MineralInfo'>;
-
-  
 const MineralInfoScreen = () => {
   const route = useRoute<MineralInfoScreenRouteProp>();
-  const navigation = useNavigation<MineralInfoScreenNavigationProp>();
   const { name, description, image_url } = route.params;
-
-  // Configura o título no header
-  // React.useLayoutEffect(() => {
-  //   navigation.setOptions({ name });
-  // }, [navigation, name]);
 
   return (
     <S.Container>
-      <Text>{name}</Text>
-      <Text>{description}</Text>
-      {image_url && (
-        <S.StyledImage
-          source={{ uri: image_url }}
-        />
-      )}
+      <Card style={{ height: '90%', width: '100%' }}>
+        <Card.Title title={name}/>
+        <ScrollView>
+          {image_url && (
+            <Card.Cover
+              style={{ padding: 16, width: '100%', height: 300 }}
+              source={{ uri: image_url }}
+            />
+          )}
+          <Card.Content>
+            <Text variant='bodyMedium'>{description}</Text>
+          </Card.Content>
+        </ScrollView>
+      </Card>
     </S.Container>
   );
 };
 
 export default MineralInfoScreen;
-

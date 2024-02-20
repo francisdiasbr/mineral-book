@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
+import { Text, TextInput } from 'react-native-paper';
 
 import { DispatchType, RootState } from '../../app/store';
 import {
@@ -27,7 +28,7 @@ const MineralSearch = ({ navigation }: any) => {
     <S.Container>
       <Text style={{ fontSize: 20 }}>Mineral search</Text>
       <Text>Search for a mineral</Text>
-      <S.Input
+      <TextInput
         onChangeText={(newText) => {
           setSearchTerm(newText);
           if (newText.trim().length >= 3) {
@@ -37,7 +38,8 @@ const MineralSearch = ({ navigation }: any) => {
           }
         }}
         value={searchTerm}
-        placeholder='Digite para pesquisar...'
+        placeholder='Type to search'
+        style={{width: '100%'}}
       />
       {mineralsSearch.status === 'succeeded' &&
         Array.isArray(mineralsSearch.minerals) && (
