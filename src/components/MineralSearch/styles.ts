@@ -3,7 +3,11 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
   align-items: center;  
   flex: 1;
-  gap: 16px;
+`
+
+export const Input = styled.View`
+  align-items: left;
+  width: 100%;
 `
 
 export const StyledScrollView = styled.ScrollView`

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Text, TextInput } from 'react-native-paper';
+import { HelperText, Text, TextInput } from 'react-native-paper';
 
 import { DispatchType, RootState } from '../../app/store';
 import {
@@ -23,23 +23,30 @@ const MineralSearch = ({ navigation }: any) => {
     }
   };
 
+  const hasErrors = () => searchTerm.length < 3 && searchTerm.length > 0;
+
   return (
     <S.Container>
       <Text variant='headlineSmall'>Mineral search</Text>
       <Text variant='titleSmall'>Search for a mineral</Text>
-      <TextInput
-        onChangeText={(newText) => {
-          setSearchTerm(newText);
-          if (newText.trim().length >= 3) {
-            handleSearchMineral(newText);
-          } else {
-            dispatch(clearMinerals());
-          }
-        }}
-        value={searchTerm}
-        placeholder='Type to search'
-        style={{ width: '100%' }}
-      />
+      <S.Input>
+        <TextInput
+          onChangeText={(newText) => {
+            setSearchTerm(newText);
+            if (newText.trim().length >= 3) {
+              handleSearchMineral(newText);
+            } else {
+              dispatch(clearMinerals());
+            }
+          }}
+          value={searchTerm}
+          placeholder='Type to search'
+          style={{ marginTop: 32, width: '100%' }}
+        />
+        <HelperText type='info' visible={hasErrors()}>
+          You need to type at least three letters
+        </HelperText>
+      </S.Input>
       {mineralsSearch.status === 'succeeded' &&
         Array.isArray(mineralsSearch.minerals) && (
           <S.StyledScrollView>
