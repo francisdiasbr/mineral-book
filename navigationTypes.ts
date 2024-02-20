@@ -4,9 +4,29 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 export type RootStackParamList = {
   Home: undefined;
   MineralInfo: {
-    name: string;
-    description?: string;
-    image_url?: string;
+    mineral: {
+      name: string;
+      category?: string;
+      formula?: string;
+      ima_symbol?: string;
+      strunz_classification?: string;
+      dana_classification?: string;
+      crystal_system?: string;
+      space_group?: string;
+      unit_cell?: string;
+      color?: string;
+      cleavage?: string;
+      fracture?: string;
+      mohs_scale?: string;
+      luster?: string;
+      streak?: string;
+      diaphaneity?: string;
+      specific_gravity?: string;
+      optical_properties?: string;
+      ultraviolet_fluorescence?: string;
+      absorption_spectra?: string;
+      image_url?: string;
+    }
   };
 };
 

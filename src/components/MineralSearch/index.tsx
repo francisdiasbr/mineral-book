@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { TouchableOpacity } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { Text, TextInput } from 'react-native-paper';
 
@@ -26,8 +25,8 @@ const MineralSearch = ({ navigation }: any) => {
 
   return (
     <S.Container>
-      <Text style={{ fontSize: 20 }}>Mineral search</Text>
-      <Text>Search for a mineral</Text>
+      <Text variant='headlineSmall'>Mineral search</Text>
+      <Text variant='titleSmall'>Search for a mineral</Text>
       <TextInput
         onChangeText={(newText) => {
           setSearchTerm(newText);
@@ -39,24 +38,20 @@ const MineralSearch = ({ navigation }: any) => {
         }}
         value={searchTerm}
         placeholder='Type to search'
-        style={{width: '100%'}}
+        style={{ width: '100%' }}
       />
       {mineralsSearch.status === 'succeeded' &&
         Array.isArray(mineralsSearch.minerals) && (
           <S.StyledScrollView>
             {mineralsSearch.minerals.map((item: any, index: number) => (
-              <TouchableOpacity
+              <S.StyledTouchableOpacity
                 key={index}
                 onPress={() =>
-                  navigation.navigate('MineralInfo', {
-                    name: item.name,
-                    description: item.description,
-                    image_url: item.image_url,
-                  })
+                  navigation.navigate('MineralInfo', { mineral: item })
                 }
               >
-                <Text>{item.name}</Text>
-              </TouchableOpacity>
+                <Text variant='bodyLarge'>{item.name}</Text>
+              </S.StyledTouchableOpacity>
             ))}
           </S.StyledScrollView>
         )}

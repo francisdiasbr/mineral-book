@@ -74,7 +74,7 @@ export default function App() {
               name='MineralInfo'
               component={MineralInfoScreen}
               options={({ route }) => ({
-                title: route.params.name,
+                title: route.params.mineral.name,
               })}
             />
           </Stack.Navigator>
