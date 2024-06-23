@@ -3,7 +3,7 @@ import React from 'react';
 import { ScrollView } from 'react-native';
 import { Card, Text } from 'react-native-paper';
 
-import { MineralInfoScreenRouteProp } from '../../../navigationTypes';
+import { MineralInfoScreenRouteProp } from '../../navigation/navigationTypes';
 import * as S from './styles';
 
 const MineralPropertiesScreen = () => {

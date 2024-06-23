@@ -9,7 +9,7 @@ import {
 } from '../../features/mineralsSearchSlice';
 import * as S from './styles';
 import { useNavigation } from '@react-navigation/native';
-import { MineralInfoScreenNavigationProp } from '../../../navigationTypes';
+import { MineralInfoScreenNavigationProp } from '../../navigation/navigationTypes';
 
 const MineralSearch = () => {
   const [searchTerm, setSearchTerm] = useState('');

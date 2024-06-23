@@ -3,7 +3,7 @@ import React from 'react';
 import Swiper from 'react-native-swiper';
 import { Divider, Text } from 'react-native-paper';
 
-import { MineralInfoScreenRouteProp } from '../../../navigationTypes';
+import { MineralInfoScreenRouteProp } from '../../navigation/navigationTypes';
 import * as S from './styles';
 
 const MineralInfoScreen = () => {

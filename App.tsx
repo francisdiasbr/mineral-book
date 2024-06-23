@@ -7,7 +7,7 @@ import { MD3LightTheme as DefaultTheme, Provider as PaperProvider } from 'react-
 import { store } from './src/app/store';
 import HomeScreen from './src/pages/Home/index';
 import MineralInfoScreen from './src/pages/MineralInfo/index';
-import { RootStackParamList } from './navigationTypes';
+import { RootStackParamList } from './src/navigation/navigationTypes';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
