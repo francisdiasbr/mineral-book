@@ -26,12 +26,11 @@ export type RootStackParamList = {
       ultraviolet_fluorescence?: string;
       absorption_spectra?: string;
       image_url?: string;
+      description_paragraph: string;
     }
   };
 };
 
-// Defina o tipo para a prop 'route'
- export type MineralInfoScreenRouteProp = RouteProp<RootStackParamList, 'MineralInfo'>;
+export type MineralInfoScreenRouteProp = RouteProp<RootStackParamList, 'MineralInfo'>;
   
-// Defina o tipo para a prop 'navigation'
 export type MineralInfoScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'MineralInfo'>;

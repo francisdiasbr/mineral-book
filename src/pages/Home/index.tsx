@@ -3,11 +3,11 @@ import React from 'react';
 import MineralSearch from '../../components/MineralSearch';
 import * as S from './styles';
 
-const HomeScreen = ({ navigation }: any) => {
+const HomeScreen = () => {
 
   return (
     <S.Container>
-      <MineralSearch navigation={navigation}/>
+      <MineralSearch />
     </S.Container>
   );
 };

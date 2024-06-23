@@ -8,11 +8,14 @@ import {
   fetchMinerals,
 } from '../../features/mineralsSearchSlice';
 import * as S from './styles';
+import { useNavigation } from '@react-navigation/native';
+import { MineralInfoScreenNavigationProp } from '../../../navigationTypes';
 
-const MineralSearch = ({ navigation }: any) => {
+const MineralSearch = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const dispatch = useDispatch<DispatchType>();
 
+  const navigation = useNavigation<MineralInfoScreenNavigationProp>();
   const mineralsSearch = useSelector(
     (state: RootState) => state.mineralsSearch
   );
