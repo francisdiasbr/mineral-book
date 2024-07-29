@@ -1,9 +1,12 @@
-# 🔮 Mineral-book (app)
+# 🔮 Mineral-book (frontend app)
 
-This project is the frontend app for [the](https://github.com/francisdiasbr/py-mineral-book) mineral-book python project. 
+This project is the frontend app for [the mineral-book python project](https://github.com/francisdiasbr/py-mineral-book). The description  and concepts of the project is in the README file.
+
+## ✨ About Mineral-book
 
 This is the frontend App for Mineral-Book Project. This code is designed to extract, process, store and search information about minerals in a semantic way. It illustrates the application of NLP and semantic search techniques to real data sets, providing a foundation for recommendation systems, enhanced search, and text analysis.
 
+## ✨ Screens
 
 | Main Screen | Mineral Screen | 
 |:---------:|:---------:|
