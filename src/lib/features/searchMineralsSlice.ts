@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { fetchMineralsService } from '../services/searchMinerals';
+import { fetchMineralsService } from '../api/searchMinerals';
 
 interface MineralsSearchStateProps {
   minerals: any[];
@@ -19,6 +19,7 @@ export const fetchMinerals = createAsyncThunk<any, string, { rejectValue: string
   async (searchTerm, { rejectWithValue }) => {
     try {
       const data = await fetchMineralsService(searchTerm);
+      console.log('data', data);
       return data;
     } catch (error: any) {
       return rejectWithValue(error.message);
