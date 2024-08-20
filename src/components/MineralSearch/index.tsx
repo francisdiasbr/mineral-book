@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '../../lib/hooks';
 import { HelperText, Text, TextInput } from 'react-native-paper';
 
-import { DispatchType, RootState } from '../../app/store';
 import {
   clearMinerals,
   fetchMinerals,
-} from '../../features/mineralsSearchSlice';
+} from '../../lib/features/searchMineralsSlice';
 import * as S from './styles';
 
 const MineralSearch = ({ navigation }: any) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const dispatch = useDispatch<DispatchType>();
+  const dispatch = useAppDispatch();
 
-  const mineralsSearch = useSelector(
-    (state: RootState) => state.mineralsSearch
-  );
+  const mineralsSearch = useAppSelector(state => state.searchMinerals);
 
   const handleSearchMineral = (searchTerm: string) => {
     if (searchTerm.trim().length >= 3) {

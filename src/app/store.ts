@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import mineralsSearchReducer from '../features/mineralsSearchSlice';
+import mineralsSearchReducer from '../lib/features/searchMineralsSlice';
 
 export const store = configureStore({
   reducer: {
